@@ -19,6 +19,21 @@
 
 
 // ]]>
+
+function checkEmail()
+{
+	var input = document.getElementById('email'),
+			tip   = document.getElementById('email_tip');
+
+	if (!input.value.match(/[a-zA-Z0-9-_]+@(omsu|e-mail\.omsu|mail-omgu)\.ru/))
+	{
+	  tip.style.display = 'inline';
+	}
+	else
+	{
+	  tip.style.display = 'none';
+	};
+}
 </script>
 
 <form method="post" action="<?php echo (isset($this->_rootref['S_UCP_ACTION'])) ? $this->_rootref['S_UCP_ACTION'] : ''; ?>" id="register">
@@ -40,7 +55,10 @@
 	</dl>
 	<dl>
 		<dt><label for="email"><?php echo ((isset($this->_rootref['L_EMAIL_ADDRESS'])) ? $this->_rootref['L_EMAIL_ADDRESS'] : ((isset($user->lang['EMAIL_ADDRESS'])) ? $user->lang['EMAIL_ADDRESS'] : '{ EMAIL_ADDRESS }')); ?>:</label></dt>
-		<dd><input type="text" tabindex="2" name="email" id="email" size="25" maxlength="100" value="<?php echo (isset($this->_rootref['EMAIL'])) ? $this->_rootref['EMAIL'] : ''; ?>" class="inputbox autowidth" title="<?php echo ((isset($this->_rootref['L_EMAIL_ADDRESS'])) ? $this->_rootref['L_EMAIL_ADDRESS'] : ((isset($user->lang['EMAIL_ADDRESS'])) ? $user->lang['EMAIL_ADDRESS'] : '{ EMAIL_ADDRESS }')); ?>" /></dd>
+		<dd>
+			<input onkeydown="checkEmail()" onblur="checkEmail()" type="text" tabindex="2" name="email" id="email" size="25" maxlength="100" value="<?php echo (isset($this->_rootref['EMAIL'])) ? $this->_rootref['EMAIL'] : ''; ?>" class="inputbox autowidth" title="<?php echo ((isset($this->_rootref['L_EMAIL_ADDRESS'])) ? $this->_rootref['L_EMAIL_ADDRESS'] : ((isset($user->lang['EMAIL_ADDRESS'])) ? $user->lang['EMAIL_ADDRESS'] : '{ EMAIL_ADDRESS }')); ?>" />
+			<span id="email_tip" style="display: none; color: red;">Для регистрации на форуме требуется корпоративная почта ОмГУ</span>
+		</dd>
 	</dl>
 	<dl>
 		<dt><label for="email_confirm"><?php echo ((isset($this->_rootref['L_CONFIRM_EMAIL'])) ? $this->_rootref['L_CONFIRM_EMAIL'] : ((isset($user->lang['CONFIRM_EMAIL'])) ? $user->lang['CONFIRM_EMAIL'] : '{ CONFIRM_EMAIL }')); ?>:</label></dt>
