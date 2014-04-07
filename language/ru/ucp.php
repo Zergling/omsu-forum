@@ -270,6 +270,8 @@ $lang = array_merge($lang, array(
 	'MOVE_TO_FOLDER'				=> 'Переместить в папку',
 	'MOVE_UP'						=> 'Сдвинуть вверх',
 
+	'OMSU_EMAIL'				=> 'Для регистрации на форуме требуется корпоративная почта ОмГУ.',
+
 	'NEW_EMAIL_CONFIRM_EMPTY'		=> 'Вы не ввели подтверждение адреса email.',
 	'NEW_EMAIL_ERROR'				=> 'Введённые вами адреса email не совпадают.',
 	'NEW_FOLDER_NAME'				=> 'Новое имя папки',

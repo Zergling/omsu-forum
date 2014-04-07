@@ -22,7 +22,7 @@ function checkEmail()
 	var input = document.getElementById('email'),
 			tip   = document.getElementById('email_tip');
 
-	if (!input.value.match(/[a-zA-Z0-9-_]+@(omsu|e-mail\.omsu|mail-omgu)\.ru/))
+	if (!input.value.match(/[a-zA-Z0-9-_]+@(omsu|e-mail\.omsu|mail-omgu)\.ru/) && input.value)
 	{
 	  tip.style.display = 'inline';
 	}
