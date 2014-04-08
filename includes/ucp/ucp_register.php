@@ -243,7 +243,7 @@ class ucp_register
 					$error[] = $user->lang['NEW_EMAIL_ERROR'];
 				}
 
-				if (!preg_match('[a-zA-Z0-9-_]+@(omsu|e-mail\.omsu|mail-omgu)\.ru', $data['email']))
+				if (!preg_match('/^([a-zA-Z0-9_\.-]+)@(omsu|e-mail\.omsu|mail-omgu)\.ru$/', $data['email']))
 				{
 					$error[] = $user->lang['OMSU_EMAIL'];
 				}

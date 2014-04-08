@@ -331,7 +331,7 @@ class phpbb_questionnaire_phpbb_data_provider
 			'captcha_gd_fonts' => true,
 			'confirm_refresh' => true,
 			'check_attachment_content' => true,
-			'check_dnsbl' => true,
+			'check_dnsbl' => false,
 			'chg_passforce' => true,
 			'cookie_secure' => true,
 			'coppa_enable' => true,
